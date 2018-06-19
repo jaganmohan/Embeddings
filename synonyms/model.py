@@ -40,9 +40,9 @@ class Word2Vec():
         with tf.device('/cpu:0'):
           # Look up embeddings for inputs.
           with tf.name_scope('embeddings'):
-            embeddings = tf.Variable(
+            self._embeddings = tf.Variable(
               tf.random_uniform([vocabulary_size, embedding_size], -1.0, 1.0))
-            embed = tf.nn.embedding_lookup(embeddings, self.train_inputs)
+            embed = tf.nn.embedding_lookup(self._embeddings, self.train_inputs)
 
           # Construct the variables for the NCE loss
           with tf.name_scope('weights'):
@@ -76,8 +76,8 @@ class Word2Vec():
           self.optimizer = tf.train.GradientDescentOptimizer(1.0).minimize(self.loss)
 
         # Compute the cosine similarity between all embeddings.
-        norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keepdims=True))
-        self.normalized_embeddings = embeddings / norm
+        norm = tf.sqrt(tf.reduce_sum(tf.square(self._embeddings), 1, keepdims=True))
+        self.normalized_embeddings = self._embeddings / norm
         self._similarity = tf.matmul(
           self.normalized_embeddings, self.normalized_embeddings, transpose_b=True)
 
@@ -119,6 +119,10 @@ class Word2Vec():
         return self._similarity
     
     @property
+    def embeddings(self):
+        return self._embeddings
+    
+    @property
     def norm_embeddings(self):
         return self.normalized_embeddings
     
@@ -147,7 +151,7 @@ def plot_with_labels(low_dim_embs, labels, filename):
 
   plt.savefig(filename)
 
-def runTSNE(embeddings):
+def runTSNE(embeddings, reverse_dictionary):
     try:
       tsne = TSNE(
         perplexity=30, n_components=2, init='pca', n_iter=5000, method='exact')
@@ -207,19 +211,21 @@ def main(current_path, args):
         similarity = model.similarity.eval()
         np.savetxt("similarity.txt", similarity)
         
+        # Save the model for checkpoints.
+        model.savemodel.save(session, os.path.join(args.log_dir, 'model.ckpt'))
+        
         # Create a configuration for visualizing embeddings with the labels in TensorBoard.
         config = projector.ProjectorConfig()
         embedding_conf = config.embeddings.add()
-        embedding_conf.tensor_name = embeddings.name
-        embedding_conf.metadata_path = os.path.join(log_dir, 'metadata.tsv')
+        embedding_conf.tensor_name = model.embeddings.name
+        embedding_conf.metadata_path = os.path.join(args.log_dir, 'metadata.tsv')
         projector.visualize_embeddings(writer, config)
+      
+        
+    # Closing writer
+    writer.close()
     
-        # Save the model for checkpoints.
-        model.savemodel.save(session, os.path.join(log_dir, 'model.ckpt'))
-        # Closing writer
-        writer.close()
-    
-    runTSNE(embeddings)
+    runTSNE(embeddings, reverse_dictionary)
 
 def parseargs(current_path):
     parser = argparse.ArgumentParser()
