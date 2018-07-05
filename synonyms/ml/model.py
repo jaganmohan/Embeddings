@@ -137,8 +137,7 @@ def main(current_path, args):
     vocabulary = read_data(filename)
     print('Data size', len(vocabulary))
 
-    # Step 2: Build the dictionary and replace rare words with UNK token.
-    
+    # Step 2: Build the dictionary and replace rare words with UNK token  
 
     # Filling 4 global variables:
     # data - list of codes (integers from 0 to vocabulary_size-1).
@@ -188,8 +187,8 @@ def main(current_path, args):
     # Closing writer
     writer.close()
     
-    #print("Plotting items on TSNE plot...")
-    #runTSNE(embeddings, reverse_dictionary, args.tsne_img_file)
+    print("Plotting items on TSNE plot...")
+    runTSNE(embeddings, reverse_dictionary, args.tsne_img_file)
 
 def parseargs(current_path):
     parser = argparse.ArgumentParser()

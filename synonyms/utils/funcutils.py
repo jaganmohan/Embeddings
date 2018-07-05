@@ -28,6 +28,7 @@ def plot_with_labels(low_dim_embs, labels, filename):
         va='bottom')
 
   plt.savefig(filename)
+  print("Saved plot at ",filename)
 
 def runTSNE(embeddings, reverse_dictionary, tsneimg_file):
   try:

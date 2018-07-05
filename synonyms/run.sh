@@ -12,7 +12,7 @@ python ml/model.py \
     --skip-window=1 \
     --num-skips=2 \
     --neg-samples=64 \
-    --epochs=10 \
+    --epochs=100001 \
     --file=data/text8.zip \
     --tsne-img-file=output/embeddings.png \
     --emb-file=output/embeddings.txt \
