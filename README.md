@@ -1,4 +1,4 @@
-# [Synonyms](https://docs.google.com/presentation/d/1xOXrY8AvHEO6jKHqcslv0AM-RYvxf401M8GA9K0tI9M/edit?usp=sharing)
+# [Embeddings](https://docs.google.com/presentation/d/1xOXrY8AvHEO6jKHqcslv0AM-RYvxf401M8GA9K0tI9M/edit?usp=sharing)
 
 This work has been done as part of a project at **Insight Data Science** as an *AI fellow*.
 
