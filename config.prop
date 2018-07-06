@@ -1,0 +1,5 @@
+IP='0.0.0.0'
+PORT=5050
+DEBUG=True
+EMB_FILE='/data/jazzy/Embeddings/synonyms/output/embeddings.txt'
+LABELS_FILE='/data/jazzy/Embeddings/synonyms/log/metadata.tsv'
