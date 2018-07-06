@@ -3,10 +3,13 @@
 This work has been done as part of a project at **Insight Data Science** as an *AI fellow*.
 
 ## Introduction
-> The project was targeted at representing and understanding abstract data like words in text, items in inventory, transactions etc. which traditioanlly are represented using unique IDs but that method fails to capture the meaning or properties about the data. Capturing meaning for a word, property about an item in inventory or transaction can be useful to find similar words in text, similar items or similar transactions in the data.  \n
-> Embedding is a vector of real numbers which is used to represent an item in D dimensions and has become the most useful way of representation in Machine Learning world. These embeddings can also store the meaning and properties of data. Being vectors of real numbers, performing algebraic operations like calculating distance helps us to understand how close or similar two items are in their meaning/features or calculating direction between two group of items gives a sense of which items pair best between the two groups. \n
-> In this project I built a generic pipeline for sequential data having context, such that leveraging context I capture the features of items in the data. I experimented my pipeline on text and E-commerce dataset \n
-> Additional information is available from my presentation present as hyperlink.
+The project was targeted at representing and understanding abstract data like words in text, items in inventory, transactions etc. which traditioanlly are represented using unique IDs but that method fails to capture the meaning or properties about the data. Capturing meaning for a word, property about an item in inventory or transaction can be useful to find similar words in text, similar items or similar transactions in the data.
+
+Embedding is a vector of real numbers which is used to represent an item in D dimensions and has become the most useful way of representation in Machine Learning world. These embeddings can also store the meaning and properties of data. Being vectors of real numbers, performing algebraic operations like calculating distance helps us to understand how close or similar two items are in their meaning/features or calculating direction between two group of items gives a sense of which items pair best between the two groups. 
+
+In this project I built a generic pipeline for sequential data having context, such that leveraging context I capture the features of items in the data. I experimented my pipeline on text and E-commerce dataset 
+
+Additional information is available from my presentation present as hyperlink.
   
 ## Pipeline
 I have divided my pipeline into following steps:
