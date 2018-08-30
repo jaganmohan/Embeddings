@@ -38,10 +38,10 @@ def parseargs():
     parser.add_argument('word', type=str, help='Word to find synonyms of')
     parser.add_argument('n_num', type=int, default=10,
                        help='Top k similar items')
-    parser.add_argument('--emb-file', type=str,
+    parser.add_argument('emb-file', type=str,
                        default=os.path.join(current_path,'output','embeddings.txt'),
                        help='Path to vocabulary similarity file')
-    parser.add_argument('--labels-file', type=str,
+    parser.add_argument('labels-file', type=str,
                        default=os.path.join(current_path,'log','metadata.tsv'),
                        help='Path to vocabulary labels file')
     FLAGS, unparsed = parser.parse_known_args()
