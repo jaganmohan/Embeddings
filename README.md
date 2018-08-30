@@ -1,4 +1,4 @@
-# [Embeddings](https://docs.google.com/presentation/d/1xOXrY8AvHEO6jKHqcslv0AM-RYvxf401M8GA9K0tI9M/edit?usp=sharing)
+# Embeddings
 
 This work has been done as part of a project at **Insight Data Science** as an *AI fellow*.
 
@@ -9,7 +9,7 @@ Embedding is a vector of real numbers which is used to represent an item in D di
 
 In this project I built a generic pipeline for sequential data having context, such that leveraging context I capture the features of items in the data. I experimented my pipeline on text and E-commerce dataset 
 
-Additional information is available from my presentation present as hyperlink.
+Additional information about this project is available from my presentation [here](https://docs.google.com/presentation/d/1xOXrY8AvHEO6jKHqcslv0AM-RYvxf401M8GA9K0tI9M/edit?usp=sharing).
   
 ## Pipeline
 I have divided my pipeline into following steps:
