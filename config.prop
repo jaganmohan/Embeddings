@@ -1,4 +1,4 @@
-IP='0.0.0.0'
+IP='127.0.0.1'
 PORT=5050
 DEBUG=True
 EMB_FILE='/data/jazzy/Embeddings/synonyms/output/embeddings.txt'
