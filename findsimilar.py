@@ -1,4 +1,3 @@
-import argparse
 """
 Custom script to find similar items in the data
 using provided API in Synonyms class
@@ -6,6 +5,7 @@ using provided API in Synonyms class
 
 import csv
 import os
+import argparse
 import numpy as np
 
 from src.synonyms import Synonyms
